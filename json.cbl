@@ -1,12 +1,12 @@
        identification division.
-       program-id. xml-generate-example.
+       program-id. json-generate-example.
        data division.
        file section.
        working-storage section.
- 
-       01  ws-xml-output                       pic x(256).
 
-       01  ws-xml-char-count                   pic 9(4).
+       01  ws-json-output                       pic x(256).
+
+       01  ws-json-char-count                   pic 9(4).
 
        01  ws-record.
            05  ws-record-name                  pic x(10).
@@ -23,30 +23,27 @@
            move "Test Value" to ws-record-value
            set ws-record-flag-enabled to true
 
-           xml generate ws-xml-output
+           json generate ws-json-output
                from ws-record
-               count in ws-xml-char-count
-               with xml-declaration
+               count in ws-json-char-count
                name of
                    ws-record-name is "name",
                    ws-record-value is "value",
                    ws-record-flag is "enabled"
-               type of ws-record-flag is attribute
-               suppress when spaces
                on exception
-                   display "Error generating xml error " XML-CODE
+                   display "Error generating JSON error " JSON-CODE
                    stop run
                not on exception
-                   display "XML document successfully generated."
-           end-xml
+                   display "JSON document successfully generated."
+           end-json
 
-           display "Generated xml for record: " ws-record
+           display "Generated JSON for record: " ws-record
            display "----------------------------"
-           display function trim(ws-xml-output)
+           display function trim(ws-json-output)
            display "----------------------------"
-           display "XML output character count: " ws-xml-char-count
+           display "JSON output character count: " ws-json-char-count
            display "Done."
            stop run.
 
 
-       end program xml-generate-example.
+       end program json-generate-example.
