@@ -1,0 +1,18 @@
+PAGE 1
+EMPLOYEE REPORT
+ID    NAME                 DEPARTMENT   SALARY
+1001  John Smith           HR           50000.50
+1002  Jane Doe             HR           60000.75
+1008  Olivia Black         HR           62000.45
+TOTAL FOR DEPARTMENT: HR = 172001.70
+
+1003  Alice Johnson        IT           70000.25
+1004  Bob Brown            IT           72000.00
+1005  Charlie White        IT           71000.10
+TOTAL FOR DEPARTMENT: IT = 213000.35
+
+1006  Emma Green           Finance      80000.00
+1007  Michael Blue         Finance      75000.90
+TOTAL FOR DEPARTMENT: Finance = 155000.90
+
+COMPANY TOTAL: 540002.95
